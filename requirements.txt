@@ -1,0 +1,23 @@
+# fastAPI
+anyio
+asgiref
+click
+cycler
+fastapi
+fonttools
+h11
+idna
+joblib
+kiwisolver
+packaging
+Pillow
+pydantic
+pyparsing
+python-dateutil
+pytz
+six
+sniffio
+starlette
+threadpoolctl
+typing_extensions
+uvicorn[standard]
