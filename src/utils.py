@@ -61,12 +61,12 @@ class LinkShortener:
         return page_link
 
     def list(self):
-        num_links = 10
+        NUM_LINKS = 10
         links = list(self.cache.keys())[:10]
         res = {}
         cnt = 0
         for k in links:
-            if cnt > 10:
+            if cnt > NUM_LINKS:
                 break
             res[k] = self.cache[k]
             cnt += 1
