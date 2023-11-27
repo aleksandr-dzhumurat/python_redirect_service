@@ -21,3 +21,5 @@ starlette
 threadpoolctl
 typing_extensions
 uvicorn[standard]
+# postgres
+psycopg2-binary

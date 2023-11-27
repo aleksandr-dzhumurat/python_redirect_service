@@ -29,3 +29,15 @@ Visualize links
 ```shell
 http://127.0.0.1:8000/explore
 ```
+
+For Postgres support add `` to the `.env` file. Check DB
+```shell
+docker exec -it postgres_container psql -U postgres -c "select short_url, origin_url from short_links"
+```
+
+Result
+```shell
+ short_url  |                 origin_url                  
+------------+---------------------------------------------
+ 75170fc230 | https://www.youtube.com/watch?v=dQw4w9WgXcQ
+ ```
