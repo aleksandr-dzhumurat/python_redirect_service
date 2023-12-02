@@ -20,7 +20,7 @@ conn.set_isolation_level(
 )
 cursor = conn.cursor()
 
-def read_links(short_url = None):
+def read_links_mapping(short_url = None):
     res_dict = {}
     if short_url is None:
         url_filter = ""
