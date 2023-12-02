@@ -15,7 +15,6 @@ shortener_prefix = os.environ['SHORTENER_PREFIX']
 class AddParams(BaseModel):
     source_url: Union[str, None] = None
 
-
 @app.post("/add")
 async def add(add_params: AddParams):
     logger.info('Page id %s', add_params.source_url)
@@ -23,17 +22,13 @@ async def add(add_params: AddParams):
     shorten_url = f'{shortener_prefix}{shorten_name}'
     return {'shorten_url': shorten_url}
 
-
 @app.get("/explore")
-def redirect_to_link():
+def explore_links():
     links_html = "<h2>List of Links:</h2><ul>"
-    for link_name, link_url in redirection_links.list().items():
+    for link_name, link_url in redirection_links.list_links().items():
         links_html += f"<li><a href='{link_url}'>{link_name}</a></li>"
     links_html += "</ul>"
-
-    # Return the HTML response
     return HTMLResponse(content=links_html)
-
 
 @app.get("/{short_link_name}")
 def redirect_to_link(short_link_name: str):
